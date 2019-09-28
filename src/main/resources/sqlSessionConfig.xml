@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <environments default="sit">
+        <environment id="sit">
+            <transactionManager type="JDBC"></transactionManager>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver"></property>
+                <property name="url" value="jdbc:mysql://localhost:3306/ssm"></property>
+                <property name="username" value="root"></property>
+                <property name="password" value="root"></property>
+            </dataSource>
+        </environment>
+    </environments>
+    <!--包名是接口的包名，但是写sql语句的xml文件所在的文件目录必须和接口的包名一致-->
+    <mappers>
+        <package name="com.qs.dao"></package>
+    </mappers>
+</configuration>
